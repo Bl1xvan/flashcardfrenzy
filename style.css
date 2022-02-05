@@ -6,9 +6,14 @@ body{
     margin: auto;
 }
 
-.input-group{
-    background-color: aquamarine;
+.header, .input-group, .button-cont, .flashcard-cont{
     display: grid;
+}
+.header, .flashcard-cont, .button-cont{
+    justify-content: center;
+}
+
+.input-group{
     grid-template-columns: auto auto auto;
     gap: 1rem;
     padding: 1rem;
@@ -19,3 +24,9 @@ body{
     flex-direction: column;
     gap: 1rem;
 }
+
+.button-cont{
+    padding: 10px;
+}
+
+
