@@ -12,27 +12,39 @@
     <div class="container">
         <h2 class="header">Input card content here!</h1>
         <div class="input-group">
-            <div class="input-cont">
+            <div class="input-cont" data-input1>
                 <label for="object" class="input-label">object</label>
-                <input type="text" class="card-input" value="Atenolol">
+                <input type="text" class="card-input" data-object>
             </div>
+            <div class="input-cont" data-input2>
+                <label for="separation" class="input-label">separate by..</label>
+                <select class="card-input" data-separate>
+                    <option value=" ">tab</option>
+                    <option value="-">-</option>
+                    <option value=",">,</option>
+                    <option value=" ">space</option>
+                    <option value="/">/</option>
+                </select>
+            </div>
+            <div class="input-cont" data-input3>
+                <label for="predicate" class="input-label">predicate</label>
+                <input type="text" class="card-input"  data-predicate>
+                
+            </div>
+        </div>
+        <div class="subject-cont">
             <div class="input-cont">
                 <label for="subjects" class="input-label">subject(s)</label>
-                <input type="text" class="card-input" value="hypotension, tachycardia, dizziness">
+                <textarea class="card-input big-text" data-subject></textarea>
+                <button class="delete" data-delete-subj>Delete subjects</button>
             </div>
-            <div class="input-cont">
-                <label for="predicate" class="input-label">predicate</label>
-                <input type="text" class="card-input" value="is a side effect of">
-            </div>   
         </div>
         <div class="button-cont">
             <button class="submit">Submit</button>
         </div>
         <div class="flashcard-cont">
-            <p class="card">hypotension</p>
-            <p class="card">tachycardia</p>
-            <p class="card">dizziness</p>
         </div>
+        <button class="delete" data-delete-flash>Delete flashcards</button>
     </div>
 </body>
 </html>
