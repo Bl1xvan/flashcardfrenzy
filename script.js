@@ -17,6 +17,18 @@ submit.addEventListener("click", function(){
     })
 })
 
+deletesubj.addEventListener("click", function(){
+    subjects.value = " ";
+})
+
+deleteflash.addEventListener("click", function(){
+    const cards = document.querySelectorAll(".card");
+    cards.forEach(card =>{
+        card.remove();
+    })
+    
+})
+
 
 
 
