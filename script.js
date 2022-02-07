@@ -7,16 +7,15 @@ const submit = document.querySelector(".submit");
 const deletesubj = document.querySelector("[data-delete-subj]");
 const deleteflash = document.querySelector("[data-delete-flash]");
 const copyflash = document.querySelector("[data-copy-flash]");
+const copyalert = document.querySelector(".copyalert");
+const deck = [];
 
 submit.addEventListener("click", function(){
     let addCards = subjects.value.split(separate.value);
     addCards.forEach(add =>{
-        let para = document.createElement("input");
-        para.className = "card"
-        para.setAttribute("type", "text")
-        para.value = object.value +"    "+ add + " " + predicate.value;
-        flashcardcont.appendChild(para);
+        deck.push(object.value +"    "+ add + " " + predicate.value);   
     })
+    flashcardcont.textContent = deck.join('\r\n');
 })
 
 ///Needs to be a text area so I can copy. But how do I break them apart?
@@ -32,7 +31,11 @@ deleteflash.addEventListener("click", function(){
     }) 
 })
 
-
-
+copyflash.addEventListener("click", function(){
+    flashcardcont.select();
+    copyText.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(flashcardcont.value);
+    copyalert.textContent = "cards copied!";
+})
 
 
