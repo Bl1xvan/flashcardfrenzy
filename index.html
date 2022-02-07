@@ -11,42 +11,51 @@
 <body>
     <!--How to put text input in dropdown-->
     <!--make flashcard-cont and iframe?-->
+    <!--need another separator from my to the object-->
+    <!--about to create left and right side-->
     <div class="container">
+    <div class="left-side">
         <h2 class="header">Input card content here!</h1>
-        <div class="input-group">
-            <div class="input-cont" data-input1>
-                <label for="object" class="input-label">object</label>
-                <input type="text" class="card-input" data-object>
+            <div class="input-group">
+                <div class="input-cont" data-input1>
+                    <label for="object" class="input-label">object</label>
+                    <input type="text" class="card-input" data-object>
+                </div>
+                <div class="input-cont" data-input2>
+                    <label for="separation" class="input-label">separate by..</label>
+                    <select class="card-input" data-separate>
+                        <option value=" ">tab</option>
+                        <option value="-">-</option>
+                        <option value=",">,</option>
+                        <option value=" ">space</option>
+                        <option value="/">/</option>
+                    </select>
+                </div>
+                <div class="input-cont" data-input3>
+                    <label for="predicate" class="input-label">predicate</label>
+                    <input type="text" class="card-input"  data-predicate>
+                    
+                </div>
             </div>
-            <div class="input-cont" data-input2>
-                <label for="separation" class="input-label">separate by..</label>
-                <select class="card-input" data-separate>
-                    <option value=" ">tab</option>
-                    <option value="-">-</option>
-                    <option value=",">,</option>
-                    <option value=" ">space</option>
-                    <option value="/">/</option>
-                </select>
+            <div class="subject-cont">
+                <div class="input-cont">
+                    <label for="subjects" class="input-label">subject(s)</label>
+                    <textarea class="card-input big-text" data-subject></textarea>
+                    <button class="delete" data-delete-subj>Delete subjects</button>
+                </div>
             </div>
-            <div class="input-cont" data-input3>
-                <label for="predicate" class="input-label">predicate</label>
-                <input type="text" class="card-input"  data-predicate>
-                
+            <div class="button-cont">
+                <button class="submit">Submit</button>
             </div>
-        </div>
-        <div class="subject-cont">
-            <div class="input-cont">
-                <label for="subjects" class="input-label">subject(s)</label>
-                <textarea class="card-input big-text" data-subject></textarea>
-                <button class="delete" data-delete-subj>Delete subjects</button>
-            </div>
-        </div>
-        <div class="button-cont">
-            <button class="submit">Submit</button>
-        </div>
+    </div>
+    <div class="right-side">
         <div class="flashcard-cont">
         </div>
-        <button class="delete" data-delete-flash>Delete flashcards</button>
+    </div>
+        <div class="bottombtns">
+            <button class="bottombtn" data-copy-flash>Copy All flashcards</button>
+            <button class="bottombtn" data-delete-flash>Delete flashcards</button>
+        </div>
     </div>
 </body>
 </html>

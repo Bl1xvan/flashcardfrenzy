@@ -37,6 +37,12 @@ body{
     gap: 1rem;
 }
 
+.bottombtns{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 5rem;
+}
+
 .subject-cont{
     width: 95%;
     margin: auto;
@@ -60,9 +66,13 @@ body{
     align-content: start;
     overflow-y: scroll;
     width: 90%;
-    height: 30vh;
+    height: 10vh;
     margin: 2rem auto 0 auto;
-    background-color: white;
+   
+}
+
+.card{
+    border: none;
 }
 
 .card-input{
@@ -73,8 +83,3 @@ body{
     height: 10vh;
 }
 
-[data-delete-flash]{
-    display: block;
-    width: 40%;
-    margin: auto;
-}
