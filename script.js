@@ -10,6 +10,10 @@ const copyflash = document.querySelector("[data-copy-flash]");
 const copyalert = document.querySelector(".copyalert");
 let text = "";
 
+flashcardcont.addEventListener("keyup", function(){
+    text = flashcardcont.value;
+})
+
 submit.addEventListener("click", function(){
     let addCards = subjects.value.split(separate.value);
     addCards.forEach(add =>{
@@ -23,6 +27,7 @@ deletesubj.addEventListener("click", function(){
 })
 
 deleteflash.addEventListener("click", function(){
+    flashcardcont.value = "";
     text = "";
 })
 
