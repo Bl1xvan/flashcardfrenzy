@@ -14,10 +14,7 @@ flashcardcont.addEventListener("keyup", function(){
     text = flashcardcont.value;
 })
 
-////add a function that puts two medications with the same side effect together. 
-//// LATER
-
-////AND SAVE TO SYSTEM!
+/////New intentions in notes already
 
 
 submit.addEventListener("click", function(){
