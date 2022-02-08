@@ -16,11 +16,11 @@ body{
     gap: 2rem;
 }
 
-.input-group, .button-cont, .flashcard-cont{
+.input-group, .flashcard-cont{
     display: grid;
 }
 
-.flashcard-cont, .button-cont{
+.flashcard-cont{
     justify-content: center;
 }
 
@@ -44,7 +44,8 @@ body{
 .bottombtns{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 5rem;
+    gap: 2rem;
+    padding: 10px;
 }
 
 .subject-cont{
@@ -57,11 +58,7 @@ body{
     height: 10vh;
 }
 
-.button-cont{
-    padding: 10px;
-}
-
-.submit{
+.submit, .delete, .bottombtn{
     padding: .75rem 0 .75rem;
 }
 
@@ -87,8 +84,19 @@ body{
     height: 10vh;
 }
 
+.left-side{
+    background-color: #ddefff;
+}
+
+.input-label{
+    font-weight: bold;
+}
 .right-side{
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: .5rem;
+}
+
+.right-side > h3{
+    text-align: center;
 }

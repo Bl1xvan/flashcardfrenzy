@@ -25,6 +25,8 @@
                     <label for="separation" class="input-label">separate by..</label>
                     <select class="card-input" data-separate>
                         <option value=",">,</option>
+                        <option value=".">.</option>
+                        <option value="\r\n">new line</option>
                         <option value=" ">space</option>
                         <option value="-">-</option>
                         <option value="/">/</option>
@@ -45,11 +47,9 @@
                 <div class="input-cont">
                     <label for="subjects" class="input-label">subject(s)</label>
                     <textarea class="card-input big-text" data-subject></textarea>
-                    <button class="delete" data-delete-subj>Delete subjects</button>
+                    <button class="bottombtn" data-submit-subj>Submit</button>
+                    <button class="bottombtn" data-delete-subj>Delete subjects</button>
                 </div>
-            </div>
-            <div class="button-cont">
-                <button class="submit">Submit</button>
             </div>
     </div>
     <div class="right-side">

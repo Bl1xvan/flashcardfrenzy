@@ -3,7 +3,7 @@ const object = document.querySelector("[data-object]");
 const predicate = document.querySelector("[data-predicate]");
 const separate = document.querySelector("[data-separate]");
 const flashcardcont = document.querySelector(".flashcard-cont");
-const submit = document.querySelector(".submit");
+const submit = document.querySelector("[data-submit-subj]");
 const deletesubj = document.querySelector("[data-delete-subj]");
 const deleteflash = document.querySelector("[data-delete-flash]");
 const copyflash = document.querySelector("[data-copy-flash]");
@@ -13,6 +13,12 @@ let text = "";
 flashcardcont.addEventListener("keyup", function(){
     text = flashcardcont.value;
 })
+
+////add a function that puts two medications with the same side effect together. 
+//// LATER
+
+////AND SAVE TO SYSTEM!
+
 
 submit.addEventListener("click", function(){
     let addCards = subjects.value.split(separate.value);
