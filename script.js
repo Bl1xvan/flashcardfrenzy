@@ -1,3 +1,15 @@
+class Cardobject {
+    constructor(objitem, additem, subjitem, preditem) {
+        this.objectItem = objitem;
+        this.addItem = additem;
+        this.subjectItem = subjitem;
+        this.predicateItem = preditem;
+        this.textItem = function(){
+            return this.objectItem + this.addItem + this.subjectItem +" "+ this.predicateItem;
+        }
+    }
+}
+
 const subjects = document.querySelector("[data-subject]");
 const object = document.querySelector("[data-object]");
 const predicate = document.querySelector("[data-predicate]");
@@ -8,22 +20,24 @@ const deletesubj = document.querySelector("[data-delete-subj]");
 const deleteflash = document.querySelector("[data-delete-flash]");
 const copyflash = document.querySelector("[data-copy-flash]");
 const copyalert = document.querySelector(".copyalert");
-let text = "";
+let text = [];
 
 flashcardcont.addEventListener("keyup", function(){
     text = flashcardcont.value;
 })
 
-/////New intentions in notes already
+const cardItem1 = Cardobject.textItem("Ed Edd n Eddy", "    ", "Ed", "is a character from" );
+const cardItem2 = Cardobject.textItem("Ed Edd n Eddy", "    ", "Edd", "is a character from" );
+const cardItem3 = Cardobject.textItem("Ed Edd n Eddy", "    ", "Eddy", "is a character from");
 
+text.push(cardItem1);
+text.push(cardItem2);
+text.push(cardItem3);
 
-submit.addEventListener("click", function(){
-    let addCards = subjects.value.split(separate.value);
-    addCards.forEach(add =>{
-        text += object.value +"    "+ add + " " + predicate.value + '\r\n';
-    })
-    flashcardcont.value = text;
-})
+console.log(text);
+///s ubmit.addE ventListener("click", function(){
+
+//} )
 
 deletesubj.addEventListener("click", function(){
     subjects.value = " ";
