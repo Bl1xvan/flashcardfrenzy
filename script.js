@@ -22,13 +22,12 @@ const copyalert = document.querySelector(".copyalert");
 let arrayb4Chng = [];
 let text = [];
 
-
 flashcardcont.addEventListener("keyup", function(){
     text = flashcardcont.value;
 })
 
 Cardobject.prototype.txttoChng = function(){
-    arrayb4Chng.push({item1: this.objectItem, item2: this.addItem, item3: this.subjectItem, item4: this.predicateItem});
+    return {item1: this.objectItem, item2: this.addItem, item3: this.subjectItem, item4: this.predicateItem};
 }
 
 /////need to compare item3's within the array
@@ -36,21 +35,43 @@ Cardobject.prototype.txttoChng = function(){
 const cardItem1 = new Cardobject("Ed Edd n Eddy", "    ", "Ed", "is a character from" );
 const cardItem2 = new Cardobject("Ed Edd n Eddy", "    ", "Edd", "is a character from" );
 const cardItem3 = new Cardobject("Ed Edd n Eddy", "    ", "Eddy", "is a character from");
-const cardItem4 = new Cardobject("Ed Edd n Eddy", "    ", "Eddy", "is a character from");
+const cardItem4 = new Cardobject("Samurai Jack", "    ", "Eddy", "is a character from");
+const cardItem5 = new Cardobject("Samurai Jack", "    ", "Edd", "is a character from");
+const cardItem6 = new Cardobject("Dexter's Lab", "    ", "Edd", "is a character from");
+const cardItem7 = new Cardobject("Cow and Chicken", "    ", "Eddy", "is a character from");
+////Need a more hassle free way to do this part...
 
-text.push(cardItem1.txttoChng());
-text.push(cardItem2.txttoChng());
-text.push(cardItem3.txttoChng());
-text.push(cardItem4.txttoChng())
+arrayb4Chng.push(cardItem1.txttoChng());
+arrayb4Chng.push(cardItem2.txttoChng());
+arrayb4Chng.push(cardItem3.txttoChng());
+arrayb4Chng.push(cardItem4.txttoChng());
+arrayb4Chng.push(cardItem5.txttoChng());
+arrayb4Chng.push(cardItem6.txttoChng());
+arrayb4Chng.push(cardItem7.txttoChng());
+////...And this part.
 
+let reduceMap = new Set();
 
+arrayb4Chng.forEach(obj => {
+    reduceMap.add(obj.item3);
+})
 
 console.log(arrayb4Chng);
-for(let x in arrayb4Chng){
-    let mxObj = [];
-    console.log(arrayb4Chng[x].item1 + " " + arrayb4Chng[x].item3);
-}
+console.log(reduceMap);
 
+let mxMap = new Map();
+
+reduceMap.forEach(arr =>{
+    let newArr = []
+    arrayb4Chng.forEach(obj =>{
+        if(obj.item3 === arr){
+            newArr.push(obj.item1);
+            mxMap.set(arr, newArr)
+        }
+    })
+})
+
+console.log(mxMap);
 
 
 ///s ubmit.addE ventListener("click", function(){
