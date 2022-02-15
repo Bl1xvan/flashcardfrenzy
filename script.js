@@ -58,6 +58,7 @@ console.log(reduceMap);
 
 let mxMap = new Map();
 //////this is the branch 'maptest'
+/////Can I do all this shit with one map???
 reduceMap.forEach(arr =>{
     let newArr = []
     arrayb4Chng.forEach(obj =>{
