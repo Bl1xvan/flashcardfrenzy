@@ -19,10 +19,7 @@ const copyflash = document.querySelector("[data-copy-flash]");
 const copyalert = document.querySelector(".copyalert");
 let arrayb4Chng = new Map();
 
-Cardobject.prototype.txttoChng = function(){
-    return {item1: this.objectItem, item2: this.addItem, item3: this.subjectItem, item4: this.predicateItem};
-}
-
+////Look up maps on youtube..
 /////need to compare item3's within the array
 
 const cardItem1 = new Cardobject("Ed Edd n Eddy", "    ", "Ed", "is a character from" );
@@ -40,7 +37,6 @@ deletesubj.addEventListener("click", function(){
 
 deleteflash.addEventListener("click", function(){
     flashcardcont.value = "";
-    text = "";
 })
 
 copyflash.addEventListener("click", function(){
