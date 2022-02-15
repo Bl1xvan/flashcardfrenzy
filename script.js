@@ -6,8 +6,6 @@ class Cardobject {
         this.predicateItem = preditem;
     }
 }
-////add parameters in the constructor?
-//// before the main text array is converted to a string, it must check for matches
 
 const subjects = document.querySelector("[data-subject]");
 const object = document.querySelector("[data-object]");
@@ -20,7 +18,6 @@ const deleteflash = document.querySelector("[data-delete-flash]");
 const copyflash = document.querySelector("[data-copy-flash]");
 const copyalert = document.querySelector(".copyalert");
 let arrayb4Chng = [];
-let text = [];
 
 flashcardcont.addEventListener("keyup", function(){
     text = flashcardcont.value;
@@ -66,10 +63,12 @@ reduceMap.forEach(arr =>{
     arrayb4Chng.forEach(obj =>{
         if(obj.item3 === arr){
             newArr.push(obj.item1);
-            mxMap.set(arr, newArr)
+            mxMap.set(newArr, {start: arr, end: obj.item4});
         }
     })
 })
+
+//////Can I put some of these arrays together??
 
 console.log(mxMap);
 
