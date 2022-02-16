@@ -23,7 +23,7 @@ let arrayb4Chng = [];
 /////need to compare item3's within the array
 
 Cardobject.prototype.cardItem = function() {
-    return {item1: this.objectItem, item2: this.addItem, item3: this.subjectItem, item4: this.predicateItem }
+    arrayb4Chng.push({item1: this.objectItem, item2: this.addItem, item3: this.subjectItem, item4: this.predicateItem })
 }
 
 
@@ -35,6 +35,35 @@ const cardItem5 = new Cardobject("Samurai Jack", "    ", "Edd", "is a character 
 const cardItem6 = new Cardobject("Dexter's Lab", "    ", "Edd", "is a character from");
 const cardItem7 = new Cardobject("Cow and Chicken", "    ", "Eddy", "is a character from");
 
+cardItem1.cardItem();
+cardItem2.cardItem();
+cardItem3.cardItem();
+cardItem4.cardItem();
+cardItem5.cardItem();
+cardItem6.cardItem();
+cardItem7.cardItem();
+
+console.log(arrayb4Chng);
+
+let reduceSet = new Set();
+
+arrayb4Chng.forEach(obj => {
+    reduceSet.add(obj.item3);
+})
+
+let mxMap = new Map();
+
+reduceSet.forEach(arr=>{
+    let newArr = [];
+    arrayb4Chng.forEach(obj => {
+        if(obj.item3 === arr){
+            newArr.push(obj.item1)
+            mxMap.set(obj.item3, newArr)
+        }
+    })
+})
+
+console.log(mxMap);
 
 deletesubj.addEventListener("click", function(){
     subjects.value = " ";
