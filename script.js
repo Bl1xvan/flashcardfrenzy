@@ -19,10 +19,10 @@ const copyflash = document.querySelector("[data-copy-flash]");
 const copyalert = document.querySelector(".copyalert");
 let arrayb4Chng = [];
 
+////Look up maps on youtube..
+/////need to compare item3's within the array
 
-Cardobject.prototype.txttoChng = function(){
-    return {item1: this.objectItem, item2: this.addItem, item3: this.subjectItem, item4: this.predicateItem};
-}
+
 
 const cardItem1 = new Cardobject("Ed Edd n Eddy", "    ", "Ed", "is a character from" );
 const cardItem2 = new Cardobject("Ed Edd n Eddy", "    ", "Edd", "is a character from" );
@@ -32,44 +32,6 @@ const cardItem5 = new Cardobject("Samurai Jack", "    ", "Edd", "is a character 
 const cardItem6 = new Cardobject("Dexter's Lab", "    ", "Edd", "is a character from");
 const cardItem7 = new Cardobject("Cow and Chicken", "    ", "Eddy", "is a character from");
 
-arrayb4Chng.push(cardItem1.txttoChng());
-arrayb4Chng.push(cardItem2.txttoChng());
-arrayb4Chng.push(cardItem3.txttoChng());
-arrayb4Chng.push(cardItem4.txttoChng());
-arrayb4Chng.push(cardItem5.txttoChng());
-arrayb4Chng.push(cardItem6.txttoChng());
-arrayb4Chng.push(cardItem7.txttoChng());
-////...And this part.
-
-let reduceMap = new Set();
-
-arrayb4Chng.forEach(obj => {
-    reduceMap.add(obj.item3);
-})
-
-console.log(arrayb4Chng);
-console.log(reduceMap);
-
-let mxMap = new Map();
-
-reduceMap.forEach(arr =>{
-    let newArr = []
-    arrayb4Chng.forEach(obj =>{
-        if(obj.item3 === arr){
-            newArr.push(obj.item1);
-            mxMap.set(newArr, {start: arr, end: obj.item4});
-        }
-    })
-})
-
-//////Can I put some of these arrays together??
-
-console.log(mxMap);
-
-
-///s ubmit.addE ventListener("click", function(){
-
-//} )
 
 deletesubj.addEventListener("click", function(){
     subjects.value = " ";
