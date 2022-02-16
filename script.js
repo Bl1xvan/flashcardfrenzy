@@ -19,15 +19,10 @@ const copyflash = document.querySelector("[data-copy-flash]");
 const copyalert = document.querySelector(".copyalert");
 let arrayb4Chng = [];
 
-flashcardcont.addEventListener("keyup", function(){
-    text = flashcardcont.value;
-})
 
 Cardobject.prototype.txttoChng = function(){
     return {item1: this.objectItem, item2: this.addItem, item3: this.subjectItem, item4: this.predicateItem};
 }
-
-/////need to compare item3's within the array
 
 const cardItem1 = new Cardobject("Ed Edd n Eddy", "    ", "Ed", "is a character from" );
 const cardItem2 = new Cardobject("Ed Edd n Eddy", "    ", "Edd", "is a character from" );
@@ -36,7 +31,6 @@ const cardItem4 = new Cardobject("Samurai Jack", "    ", "Eddy", "is a character
 const cardItem5 = new Cardobject("Samurai Jack", "    ", "Edd", "is a character from");
 const cardItem6 = new Cardobject("Dexter's Lab", "    ", "Edd", "is a character from");
 const cardItem7 = new Cardobject("Cow and Chicken", "    ", "Eddy", "is a character from");
-////Need a more hassle free way to do this part...
 
 arrayb4Chng.push(cardItem1.txttoChng());
 arrayb4Chng.push(cardItem2.txttoChng());
@@ -83,7 +77,6 @@ deletesubj.addEventListener("click", function(){
 
 deleteflash.addEventListener("click", function(){
     flashcardcont.value = "";
-    text = "";
 })
 
 copyflash.addEventListener("click", function(){
