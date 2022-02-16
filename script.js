@@ -22,6 +22,9 @@ let arrayb4Chng = [];
 ////Look up maps on youtube..
 /////need to compare item3's within the array
 
+Cardobject.prototype.cardItem = function() {
+    return {item1: this.objectItem, item2: this.addItem, item3: this.subjectItem, item4: this.predicateItem }
+}
 
 
 const cardItem1 = new Cardobject("Ed Edd n Eddy", "    ", "Ed", "is a character from" );
